@@ -41,6 +41,15 @@ application:
     root: INFO
   timeServiceUri: http://time-service:8080
 
+time-service:
+  # condition for deploying dependency
+  enabled: true
+  # here params for dependnecy
+  replicaCount: 2
+  fullnameOverride: time-service
+  application:
+    hostPrefix: true
+
 service:
   type: ClusterIP
   port: 8080

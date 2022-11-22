@@ -4,6 +4,6 @@ metadata:
   name: {{ include "time-service.fullname" . }}-configmap
 data:
   SERVICE_PORT: {{ .Values.service.port | quote }}
-  LOG_LEVEL_ROOT: {{ .Values.application.loggingLevels.root | default "INFO" | quote }}
+  LOGGING_LEVEL_ROOT: {{ .Values.application.loggingLevels.root | default "INFO" | quote }}
   POD_PREFIX: {{ .Values.application.hostPrefix | default false | quote }}
   TIME_PATTERN: {{ .Values.application.pattern | default "yyyy-MM-dd HH:mm:ss.SSSX" | quote }}

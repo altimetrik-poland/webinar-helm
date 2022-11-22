@@ -4,5 +4,5 @@ metadata:
   name: {{ include "api-service.fullname" . }}-configmap
 data:
   SERVICE_PORT: {{ .Values.service.port | quote }}
-  LOG_LEVEL_ROOT: {{ .Values.application.loggingLevels.root | default "INFO" | quote }}
+  LOGGING_LEVEL_ROOT: {{ .Values.application.loggingLevels.root | default "INFO" | quote }}
   TIME_SERVICE_URI: {{ .Values.application.timeServiceUri | default false | quote }}

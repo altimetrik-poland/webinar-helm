@@ -1,0 +1,6 @@
+dependencies:
+- name: time-service
+  repository: file://../../time-service/helm
+  version: 0.1.0
+digest: sha256:7e06f22482bcae4e7d6fad6da5a89880ea252449b7825bda66a5cb7e8c3073d3
+generated: "2022-11-22T08:57:55.5725651+01:00"

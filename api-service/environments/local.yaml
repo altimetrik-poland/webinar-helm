@@ -1,0 +1,16 @@
+image:
+  tag: latest
+
+application:
+  loggingLevels:
+    root: INFO
+
+time-service:
+  image:
+    tag: latest
+
+  replicaCount: 3
+
+  application:
+    loggingLevels:
+      root: INFO
