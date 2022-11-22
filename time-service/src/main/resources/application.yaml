@@ -1,0 +1,16 @@
+time-service:
+  pattern:  ${TIME_PATTERN:yyyy-MM-dd HH:mm:ss.SSSX}
+  pod-prefix: ${POD_PREFIX:false}
+
+server:
+  port: ${SERVICE_PORT:8080}
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+logging:
+  level:
+    root: ${LOGGING_LEVEL_ROOT:INFO}
