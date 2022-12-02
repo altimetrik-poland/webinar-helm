@@ -1,0 +1,7 @@
+api-service:
+  image:
+    tag: latest
+
+time-service:
+  image:
+    tag: latest

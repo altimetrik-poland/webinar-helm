@@ -1,0 +1,14 @@
+apiVersion: v2
+name: time-solution
+description: An umbrella chart to deploy time-service and api-service
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+
+dependencies:
+- name: time-service
+  version: "0.1.0"
+  repository: "file://../../time-service/helm"
+- name: api-service
+  version: "0.1.0"
+  repository: "file://../../api-service/helm"

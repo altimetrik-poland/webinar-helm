@@ -1,0 +1,18 @@
+api-service:
+  # config for api-service
+  replicaCount: 1
+  fullnameOverride: api-service
+  application:
+    loggingLevels:
+      root: INFO
+    timeServiceUri: http://time-service:8080
+  time-service:
+    # condition for deploying dependency
+    enabled: false
+
+time-service:
+  # config for time-service
+  replicaCount: 2
+  fullnameOverride: time-service
+  application:
+    hostPrefix: true

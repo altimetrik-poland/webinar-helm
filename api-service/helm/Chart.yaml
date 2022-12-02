@@ -7,6 +7,6 @@ appVersion: "0.1.0"
 
 dependencies:
 - name: time-service
-  condition: .Values["time-service"].enabled
+  condition: time-service.enabled
   version: "0.1.0"
   repository: "file://../../time-service/helm"
