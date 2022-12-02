@@ -1,0 +1,8 @@
+image:
+  tag: latest
+
+replicaCount: 2
+
+application:
+  loggingLevels:
+    org.springframework.web.servlet.DispatcherServlet: TRACE

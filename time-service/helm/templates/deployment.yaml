@@ -15,6 +15,7 @@ spec:
     metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        checksum/config-dir: {{ include (print $.Template.BasePath "/config-dir.yaml") . | sha256sum }}
         {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
@@ -29,6 +30,10 @@ spec:
       serviceAccountName: {{ include "time-service.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      volumes:
+        - name: {{ include "time-service.fullname" . }}-config-volume
+          configMap:
+            name: {{ include "time-service.fullname" . }}-config-dir
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -38,6 +43,9 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ include "time-service.fullname" . }}-configmap
+          volumeMounts:
+            - name: {{ include "time-service.fullname" . }}-config-volume
+              mountPath: /app/config
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
