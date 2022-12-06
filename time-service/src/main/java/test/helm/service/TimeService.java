@@ -26,7 +26,7 @@ public class TimeService {
   }
 
   public String currentTime() {
-    log.info("currentTime()");
+    log.trace("currentTime()");
     return formatter.format(Instant.now());
   }
 }
